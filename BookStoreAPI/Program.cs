@@ -1,4 +1,6 @@
 
+using BookStoreAPI.Services;
+
 namespace BookStoreAPI
 {
     public class Program
@@ -13,7 +15,12 @@ namespace BookStoreAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddSingleton<BooksDataStore>();
+            builder.Services.Configure<MongoDBSettings>(
+                builder.Configuration.GetSection("BookStoreDatabase"));
+            builder.Services.AddSingleton<MongoDBContext>();
+            builder.Services.AddSingleton<IBookRepository, BookRepository>();
+            builder.Services.AddSingleton<IUserRepository, UserRepository>();
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
 

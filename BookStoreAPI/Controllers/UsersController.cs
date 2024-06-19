@@ -1,0 +1,56 @@
+﻿using AutoMapper;
+using BookStoreAPI.DTOs;
+using BookStoreAPI.Entities;
+using BookStoreAPI.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace BookStoreAPI.Controllers
+{
+    [Route("api/users")]
+    [ApiController]
+    public class UsersController : ControllerBase
+    {
+        private readonly IUserRepository _userRepository;
+        private readonly IMapper _mapper;
+
+        public UsersController(IUserRepository userRepository, IMapper mapper)
+        {
+            _userRepository = userRepository;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<UserDTO>>> getUsers()
+        {
+            var users = await _userRepository.GetUserListAsync();
+            
+            return Ok(_mapper.Map<IEnumerable<UserDTO>>(users));
+        }
+
+        [HttpGet("userid")]
+        public async Task<ActionResult<UserDTO>> GetUser(string userId)
+        {
+            var user = await _userRepository.GetUserByIdAsync(userId);
+
+            if (user == null) 
+            {
+                return NotFound();
+            }
+
+            return Ok(_mapper.Map<UserDTO>(user));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<UserDTO>> InsertUser(InsertNewUserDTO newUser)
+        {
+            var userToBeInserted = _mapper.Map<User>(newUser);
+
+            await _userRepository.AddUserAsync(userToBeInserted);
+
+            var userToBeReturned = _mapper.Map<UserDTO>(userToBeInserted);
+
+            return CreatedAtAction(nameof(GetUser), new { userToBeReturned.Id}, userToBeReturned);
+        }
+    }
+}

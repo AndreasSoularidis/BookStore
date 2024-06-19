@@ -1,6 +1,10 @@
-﻿using BookStoreAPI.DTOs;
+﻿using AutoMapper;
+using BookStoreAPI.DTOs;
+using BookStoreAPI.Entities;
+using BookStoreAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace BookStoreAPI.Controllers
 {
@@ -8,32 +12,47 @@ namespace BookStoreAPI.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        private BooksDataStore _booksStore;
+        private readonly IBookRepository _bookRepository;
+        private readonly IMapper _mapper;
 
-        public BooksController(BooksDataStore booksStore)
+        public BooksController(IBookRepository bookRepository, IMapper mapper)
         {
-            _booksStore = booksStore;
+            _bookRepository = bookRepository ?? throw new ArgumentNullException(nameof(bookRepository));
+            _mapper = mapper;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<BookDTO>> GetBooks()
+        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
-            return Ok(_booksStore.Books);
+            var books = await _bookRepository.GetBookListAsync();
+
+            return Ok(_mapper.Map<IEnumerable<BookDTO>>(books));
         }
 
         [HttpGet("bookId")]
-        public ActionResult<BookDTO> GetBook(Guid id)
+        public async Task<ActionResult<BookDTO>> GetBook(string id)
         {
-            var books = _booksStore.Books;
+            var book = await _bookRepository.GetBookByIdAsync(id);
 
-            var bookToReturn = books.FirstOrDefault(b => b.Id == id);
-
-            if (bookToReturn == null)
+            if (book == null)
             {
                 return NotFound();
             }
 
-            return Ok(bookToReturn);
+            return Ok(book);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<BookDTO>> AddBook(InsertNewBookDTO newBook)
+        {
+            var bookToBeInserted = _mapper.Map<Book>(newBook);
+
+            await _bookRepository.AddBookAsync(bookToBeInserted);
+
+            var bookToBeReturned = _mapper.Map<DTOs.BookDTO>(bookToBeInserted);
+
+            return CreatedAtAction(nameof(GetBook), new { id = bookToBeReturned.Id }, bookToBeReturned);
         }
     }
 }

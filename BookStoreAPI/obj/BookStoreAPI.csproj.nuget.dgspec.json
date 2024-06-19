@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStoreProject\\BookStore\\BookStoreAPI\\BookStoreAPI.csproj": {}
+    "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStore\\BookStoreAPI\\BookStoreAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStoreProject\\BookStore\\BookStoreAPI\\BookStoreAPI.csproj": {
+    "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStore\\BookStoreAPI\\BookStoreAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStoreProject\\BookStore\\BookStoreAPI\\BookStoreAPI.csproj",
+        "projectUniqueName": "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStore\\BookStoreAPI\\BookStoreAPI.csproj",
         "projectName": "BookStoreAPI",
-        "projectPath": "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStoreProject\\BookStore\\BookStoreAPI\\BookStoreAPI.csproj",
+        "projectPath": "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStore\\BookStoreAPI\\BookStoreAPI.csproj",
         "packagesPath": "C:\\Users\\ITC-THALES-NET9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStoreProject\\BookStore\\BookStoreAPI\\obj\\",
+        "outputPath": "C:\\Users\\ITC-THALES-NET9\\Desktop\\Projects\\BookStore\\BookStoreAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ITC-THALES-NET9\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,18 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.26.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
