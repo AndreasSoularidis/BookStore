@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <header class="main-nav">
+      <div class="container flex flex-right secondary-menu">
+        <nav>
+          <ul class="flex ">
+            <li class="mr-1"><a href="login.html"><i class="fa-solid fa-user mr-0"></i>Σύνδεση/Εγγραφή</a></li>
+            <li class=" mr-1"><a href="shopping.html"><i class="fa-solid fa-cart-shopping mr-0"></i>Καλάθι</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container main-menu flex space-around">
+        <div class="logo"><a href="index.html">Book<span class="highlight">Store</span></a></div>
+        <nav>
+          <ul class="flex">
+            <li class="ml-2"><a href="index.html" class="selected">Αρχική</a></li>
+            <li class="ml-2"><a href="categories.html">Κατηγορίες</a></li>
+            <li class="ml-2"><a href="about.html">Σχετικά</a></li>
+            <li class="ml-2"><a href="contact.html">Επικοινωνία</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="register">
+      <div class="container">
+        <h2 class="text-medium text-center mt-2">Δημιουργήστε τον Λογαριασμό σας στο BookStore</h2>
+        <p class="text-center">
+          Καλώς ήρθατε στο BookStore! Συμπληρώστε τα παρακάτω πεδία για να δημιουργήσετε τον λογαριασμό σας και να αποκτήσετε πρόσβαση σε μια πληθώρα μοναδικών 
+          υπηρεσιών και προνομίων.</br>
+          Ήδη έχετε λογαριασμό; <a href="login.html">Συνδεθείτε εδώ</a>.</br>
+          Ανυπομονούμε να σας καλωσορίσουμε στην κοινότητά μας!
+        </p>
+        <div class="form">
+          <form action="#">
+            <div class="grid">
+              <div class="form-group">
+                <label for="first-name">Όνομα<span class="required">*</span></label>
+                <input type="first-name" name="first-name" id="first-name" />
+              </div>
+    
+              <div class="form-group">
+                <label for="last-name">Επώνυμο<span class="required">*</span></label>
+                <input type="last-name" name="last-name" id="last-name" />
+              </div>
+
+              <div class="form-group">
+                <label for="email"><span class="required">*</span>E-mail</label>
+                <input type="email" name="email" id="email" />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Τηλέφωνο<span class="required">*</span></label>
+                <input type="phone" name="phone" id="phone" />
+              </div>
+
+              <div class="form-group">
+                <label for="city">Πόλη<span class="required">*</span></label>
+                <input type="city" name="city" id="city" />
+              </div>
+
+              <div class="form-group">
+                <label for="address">Διεύθυνση<span class="required">*</span></label>
+                <input type="address" name="address" id="address" />
+              </div>
+
+              <div class="form-group">
+                <label for="zip-code">T.K<span class="required">*</span></label>
+                <input type="zip-code" name="zip-code" id="zip-code" />
+              </div>
+            </div>
+  
+            <div class="form-group flex">
+              <input type="submit" class="btn" value="Δημιουργία" />
+            </div>
+          </form>
+        </div>  
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p class="text-center">&copy;2024 BookStore</p>
+      </div>
+    </footer>
+  </body>
+</html>

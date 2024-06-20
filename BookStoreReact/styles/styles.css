@@ -44,6 +44,10 @@ img {
   margin-right: 2rem;
 }
 
+.mt-2{
+  margin-top: 2rem;
+}
+
 .text-large{
   font-size: 2.5rem;
 }
@@ -56,8 +60,16 @@ img {
   color: #ccc;
 }
 
+.text-strong{
+  font-weight: bold;
+}
+
 .text-center{
   text-align: center;
+}
+
+.required{
+  color: red;
 }
 
 .text-highlight{
@@ -87,12 +99,16 @@ p {
 .btn {
   display: inline-block;
   border: none;
-  background: var(--highlight-color);
+  background: var(--primary-color);
   color: #fff;
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
   font-size: 1.2rem;
+}
+
+.btn:hover{
+  background: var(--secondary-color);
 }
 
 .container {
@@ -147,11 +163,12 @@ p {
 }
 
 .grid-container{
+  margin: 3rem auto;
   display: grid;
   column-gap: 1.5rem;
   row-gap: 1.5rem;
-  grid-template-columns: auto auto auto;
-  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
   justify-content: center;
   align-items: center; 
 }
@@ -159,7 +176,7 @@ p {
 .grid-item{
   height: auto;
   display: block;
-  margin: 1rem 5rem;
+
 }
 
 .flex-column{
@@ -173,7 +190,7 @@ p {
 
 .box{
   border: 2px solid var(--secondary-color);
-  width: 80%;
+  width: 100%;
   padding: 1rem;
   border-radius: 10px;
 }
@@ -210,7 +227,116 @@ p {
   padding-left: 2rem;
 }
 
+.contact form{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.login form{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form {
+  flex-direction: row;
+  padding: 2rem;
+  margin: auto;
+}
+
+.form-group {
+  margin: 0.75rem;
+}
+
+.form label {
+  display: block;
+  font-weight: bold;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.form .flex{
+  justify-content: flex-end;
+}
+
+.form input[type="submit"]{
+  width: 20%;
+}
+
+.register .grid{
+  display: grid;
+  margin: 0 auto;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  grid-template-columns: 1fr 1fr ;
+  width: 100%;
+  justify-content: center;
+  align-items: center; 
+}
+
+.register .grid-item{
+  height: auto;
+  width: 100%;
+  display: block;
+  margin: 1rem 5rem;
+}
+
 footer{
   background-color: var(--primary-color);
   color: #fff;
+}
+
+.book-details img{
+  width: 40%;
+}
+
+.book-details .grid{
+  display: grid;
+  margin: 0 auto;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  justify-content: center;
+  align-items: center; 
+}
+
+.book-details .grid div p{
+  text-align: center;
+}
+
+.basket img{
+  width: 150px;
+  height: auto;
+}
+
+.basket table {
+  margin-top: 3rem;
+  border-collapse: collapse;
+  width: 100%;
+  /* table-layout: fixed; */
+}
+
+.basket table,
+.basket td,
+.basket th {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.basket th,
+.basket td {
+  padding: 15px;
+  overflow: hidden; 
+}
+
+.basket .flex{
+  justify-content: flex-end;
 }

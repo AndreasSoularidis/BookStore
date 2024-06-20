@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <header class="main-nav">
+      <div class="container flex flex-right secondary-menu">
+        <nav>
+          <ul class="flex ">
+            <li class="mr-1"><a href="login.html"><i class="fa-solid fa-user mr-0"></i>Σύνδεση/Εγγραφή</a></li>
+            <li class=" mr-1"><a href="shopping.html"><i class="fa-solid fa-cart-shopping mr-0"></i>Καλάθι</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container main-menu flex space-around">
+        <div class="logo"><a href="index.html">Book<span class="highlight">Store</span></a></div>
+        <nav>
+          <ul class="flex">
+            <li class="ml-2"><a href="index.html" class="selected">Αρχική</a></li>
+            <li class="ml-2"><a href="categories.html">Κατηγορίες</a></li>
+            <li class="ml-2"><a href="about.html">Σχετικά</a></li>
+            <li class="ml-2"><a href="contact.html">Επικοινωνία</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="book-details">
+      <div class="container">
+        <div class=" flex flex-column">
+          <h3 class="text-medium mt-2 ">Sapiens - Μια σύντομη ιστορία του ανθρώπου</h3>
+          <img src="images/sapiens.png" class="box-image" alt="">
+          <div class="description">
+            
+            <div class="grid">
+              <div>
+                <p class="text-strong">Συγγραφέας</p>
+                <p class="author">Harari Yuval Noah</p>
+              </div>
+              <div>
+                <p class="text-strong">Εκδότης</p>
+                <p class="author">Διόπτρα</p>
+              </div>
+              <div>
+                <p class="text-strong">ISBN</p>
+                <p class="author">9789606056086</p>
+              </div>
+              <div>
+                <p class="text-strong">Αριθμός Σελίδων</p>
+                <p class="author">360</p>
+              </div>
+              <div>
+                <p class="text-strong">Τιμή</p>
+                <p class="author">10,65 &euro;</p>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn"><i class="fa-solid  fa-cart-shopping mr-0"></i>Προσθήκη στο καλάθι</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p class="text-center">&copy;2024 BookStore</p>
+      </div>
+    </footer>
+  </body>
+</html>
