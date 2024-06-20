@@ -52,5 +52,31 @@ namespace BookStoreAPI.Controllers
 
             return CreatedAtAction(nameof(GetUser), new { userToBeReturned.Id}, userToBeReturned);
         }
+
+        [HttpPut("userId")]
+        public async Task<ActionResult> UpdateUser(string userId, UpdateUserDTO user)
+        {
+            if (!await _userRepository.UserExistsAsync(userId))
+            {
+                return NotFound();
+            }
+
+            var userEntity = await _userRepository.GetUserByIdAsync(userId);
+
+            if (userEntity == null)
+            {
+                return NotFound();
+            }
+
+            //var updatedUser =  _mapper.Map<User>(user);
+
+            var updatedUser = _mapper.Map(user, userEntity);
+
+            updatedUser.Id = userEntity.Id;
+
+            await _userRepository.UpdateUserAsync(userId, updatedUser);
+
+            return NoContent();
+        }
     }
 }

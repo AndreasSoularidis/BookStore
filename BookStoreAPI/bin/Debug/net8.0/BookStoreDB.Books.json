@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "6672a41390ceb1d5c999aacc"
+  },
+  "ISBN": "978-3-16-148410-0",
+  "Title": "C# Programming",
+  "Author": "John Smith",
+  "PublishDate": {
+    "$date": "2020-01-01T00:00:00.000Z"
+  },
+  "Pages": 350,
+  "Publisher": "Tech Books Publishing"
+},
+{
+  "_id": {
+    "$oid": "6672abb990ceb1d5c999aad2"
+  },
+  "ISBN": "978-0-13-110163-0",
+  "Title": "ASP.NET Core Guide",
+  "Author": "Jane Doe",
+  "PublishDate": {
+    "$date": "2021-05-15T00:00:00.000Z"
+  },
+  "Pages": 450,
+  "Publisher": "Web Dev Publishing"
+},
+{
+  "_id": {
+    "$oid": "6672b1d9b1745ff2b04116f2"
+  },
+  "ISBN": "1234",
+  "Title": "Test Book",
+  "Author": "Andreas Soularidis",
+  "PublishDate": {
+    "$date": "2024-06-19T10:23:58.043Z"
+  },
+  "Pages": 100,
+  "Publisher": "Soul P"
+}]

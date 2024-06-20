@@ -8,6 +8,7 @@ namespace BookStoreAPI.Profiles
         {
             CreateMap<Entities.User, DTOs.UserDTO>();
             CreateMap<DTOs.InsertNewUserDTO, Entities.User>();
+            CreateMap<DTOs.UpdateUserDTO, Entities.User>();
         }
     }
 }
